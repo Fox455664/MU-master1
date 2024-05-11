@@ -7,13 +7,13 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID"))
-API_HASH = getenv("API_HASH")
+API_ID = int(getenv("25655555"))
+API_HASH = getenv("57b330d11c2e758e6e3514ffc586bad5")
 
-BOT_TOKEN = getenv("BOT_TOKEN")
+BOT_TOKEN = getenv("7002439220:AAGEKskizmJ9W9l83hiaSuf6LfxmWV3oLio")
 
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "_1002071277392"))
 MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "MUSIC")
 
 OWNER_ID = list(
@@ -25,8 +25,8 @@ UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/Fox455664/MU-master1
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/FTTUTt0")
-SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/FTTUTt0")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/fox56789")
+SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/fox56789")
 
 SUPPORT_HEHE = SUPPORT_GROUP.split("me/")[1]
 
