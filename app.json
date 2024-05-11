@@ -1,0 +1,78 @@
+{
+    "name": "‹ 𝚜𝚘𝚞𝚛𝚌𝚎 𝚜𝚎𝚖𝚘 ›⁩",
+    "description": "تنصيب ميوزك سيمو مجاني 💕",
+    "logo": "https://telegra.ph/file/2e7e7b9b463149c1d00cb.jpg",
+    "keywords": [
+    "python3",
+    "telegram",
+    "bot",
+    "AnonX",
+    "MusicBot",
+    "telegram-bot",
+    "pyrogram"
+    ],
+    "env": {
+      "API_ID": {
+        "description": "ايبي ايدي المساعد » @FTTUTT7 « قناة شرح  » https://my.telegram.org « الموقع ",
+        "value": "",
+        "required": true
+      },
+      "API_HASH": {
+        "description": "ايبي هاش المساعد » @FTTUTT7 « قناة شرح https://my.telegram.org  « الموقع",
+        "value": "",
+        "required": true
+      },
+      "BOT_TOKEN": {
+        "description": "هناا توكن بوتك ",
+        "value": "",
+        "required": true
+      },
+      "MONGO_DB_URI": {
+        "description": "حط هنا كود المونجو لو معندكش سيب ده.",
+        "value": "mongodb+srv://islam2005:islam2005@cluster0.rdjot.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+        "required": false
+      },
+      "MUSIC_BOT_NAME": {
+        "description": "ضع اسم بوتك",
+        "value": "سيمو",
+        "required": true
+      },
+      "OWNER_ID": {
+        "description": "ضع ايدي المطور",
+        "value": "",
+        "required": true
+      },
+      "STRING_SESSION": {
+        "description": "جلسة بايروجرام المساعد ",
+        "value": "",
+        "required": true
+      },
+      "HEROKU_API_KEY": {
+        "description": "كـــود مفتـــاح هيروكـــو - تروح ع الرابـط » https://dashboard.heroku.com/account  ع آخـر خانـه وتنسـخ الكـود لهنـا",
+        "value": "",
+        "required": false
+      },
+      "HEROKU_APP_NAME": {
+        "description": "ضع اول اسم كمت بكتابة في اول خانه",
+        "value": "",
+        "required": false
+      },
+      "LOG_GROUP_ID": {
+        "description": "-قم بأنشاء جروب  وضيف المساعد والبوت وارفعهم مشرف وضع ايدي الجروب اللذي يبدأ ب 100",
+        "value": "",
+        "required": true
+      }
+    },
+    "buildpacks": [
+          {
+              "url": "heroku/python"
+          },
+          {
+              "url": "heroku/nodejs"
+          },
+          {
+              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+          }
+      ],
+      "stack": "container"
+  }
