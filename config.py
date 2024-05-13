@@ -7,19 +7,21 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("25655555"))
-API_HASH = getenv("57b330d11c2e758e6e3514ffc586bad5")
+API_ID = int(getenv("API_ID"))  # تحويل القيمة إلى رقم صحيح
+API_HASH = getenv("API_HASH")
 
-BOT_TOKEN = getenv("7002439220:AAGEKskizmJ9W9l83hiaSuf6LfxmWV3oLio")
+BOT_TOKEN = getenv("BOT_TOKEN")
 
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "_1002071277392"))
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "MUSIC")
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID"))  # تحويل القيمة إلى رقم صحيح
 
-OWNER_ID = list(
-  map(int, getenv("OWNER_ID", "").split())) + [6401339012]
-HEROKU_API_KEY = getenv("HEROKU_API_KEY", None)
-HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", None)
+MUSIC_assistant = getenv("MUSIC_assistant", "MUSIC")
+
+OWNER_ID = list(map(int, getenv("OWNER_ID", "").split())) + [6401339012]
+
+# تحديث المتغيرات لتعكس المعلومات الجديدة لمنصة Fly.io
+FLY_API_KEY = getenv("FLY_API_KEY", None)
+FLY_APP_NAME = getenv("FLY_APP_NAME", None)
 
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/Fox455664/MU-master1.git")
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
@@ -75,7 +77,6 @@ userstats = {}
 clean = {}
 autoclean = []
 
-
 START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/2e7e7b9b463149c1d00cb.jpg")
 
 PING_IMG_URL = getenv(
@@ -105,7 +106,6 @@ SPOTIFY_ALBUM_IMG_URL = "https://te.legra.ph/file/b35fd1dfca73b950b1b05.jpg"
 
 SPOTIFY_PLAYLIST_IMG_URL = "https://te.legra.ph/file/95b3ca7993bbfaf993dcb.jpg"
 
-
 def time_to_seconds(time):
     stringt = str(time)
     return sum(
@@ -113,12 +113,10 @@ def time_to_seconds(time):
         for i, x in enumerate(reversed(stringt.split(":")))
     )
 
-
 DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
 SONG_DOWNLOAD_DURATION_LIMIT = int(
     time_to_seconds(f"{SONG_DOWNLOAD_DURATION}:00")
 )
-
 
 if UPSTREAM_REPO:
     if not re.match("(?:http|https)://", UPSTREAM_REPO):
