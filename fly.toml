@@ -1,18 +1,31 @@
-# اسم التطبيق على Fly.io
+# ملف تكوين Fly.toml
+
 app = "mu-master1"
 
-# تكوين الخدمات
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[env]
+  API_ID = "25655555"
+  API_HASH = "57b330d11c2e758e6e3514ffc586bad5"
+  BOT_TOKEN = "7002439220:AAGEKskizmJ9W9l83hiaSuf6LfxmWV3oLio"
+  MONGO_DB_URI = "mongodb+srv://islam2005:islam2005@cluster0.rdjot.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  MUSIC_assistant = "سيمو"
+  OWNER_ID = "6908157965"
+  STRING_SESSION = ""
+  HEROKU_API_KEY = ""
+  HEROKU_APP_NAME = ""
+  LOG_GROUP_ID = "-1002071277392"
+
 [[services]]
-  # المنفذ الداخلي الذي يستمع إليه التطبيق
   internal_port = 8080
   protocol = "tcp"
 
-  # إعدادات الحد الأقصى للتوازي
   [services.concurrency]
     hard_limit = 25
     soft_limit = 20
 
-  # تكوين المنافذ
   [[services.ports]]
     handlers = ["http"]
     port = 80
@@ -21,18 +34,11 @@ app = "mu-master1"
     handlers = ["tls", "http"]
     port = 443
 
-  # فحوصات الخدمة
   [[services.tcp_checks]]
     grace_period = "30s"
     interval = "15s"
     timeout = "2s"
 
-# تكوين البيئة (إذا لزم الأمر)
-[env]
-  # متغيرات البيئة الخاصة بك
-  YOUR_ENV_VAR = "value"
-
-# تكوين الأقراص (إذا لزم الأمر)
-[[mounts]]
-  source = "volume_name"
-  destination = "/path/in/container"
+[[statics]]
+  guest_path = "/app/public"
+  url_prefix = "/"
