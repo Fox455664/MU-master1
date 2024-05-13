@@ -1,0 +1,38 @@
+# اسم التطبيق على Fly.io
+app = "mu-master1"
+
+# تكوين الخدمات
+[[services]]
+  # المنفذ الداخلي الذي يستمع إليه التطبيق
+  internal_port = 8080
+  protocol = "tcp"
+
+  # إعدادات الحد الأقصى للتوازي
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+
+  # تكوين المنافذ
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  # فحوصات الخدمة
+  [[services.tcp_checks]]
+    grace_period = "30s"
+    interval = "15s"
+    timeout = "2s"
+
+# تكوين البيئة (إذا لزم الأمر)
+[env]
+  # متغيرات البيئة الخاصة بك
+  YOUR_ENV_VAR = "value"
+
+# تكوين الأقراص (إذا لزم الأمر)
+[[mounts]]
+  source = "volume_name"
+  destination = "/path/in/container"
