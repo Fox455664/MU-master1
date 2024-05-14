@@ -66,7 +66,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(
-                text="إضغط لاضافتي لمجموعتك ✅ ", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
+                text="إضغط لاضافتي لمجموعتك ✅ ", url=f"https://t.me/ BOT_USERNAME = "your_bot_username" "
             )
         ],
     ]
