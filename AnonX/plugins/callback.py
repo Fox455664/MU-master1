@@ -163,24 +163,40 @@ async def del_back_playlist(client, CallbackQuery, _):
         await CallbackQuery.message.reply_text(
             _["admin_23"].format(mention)
         )
-    elif command == "Skip":
-        check = db.get(chat_id)
-        txt = f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🥺\n│ \n└ʙʏ : {mention} 🥀"
-        popped = None
-        try:
-            popped = check.pop(0)
-            if popped:
-                if AUTO_DOWNLOADS_CLEAR == str(True):
-                    await auto_clean(popped)
-            if not check:
-                await CallbackQuery.edit_message_text(
-                    f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🥺\n│ \n└ʙʏ : {mention} 🥀",
-                    reply_markup=close_keyboard
-                )
-                await CallbackQuery.message.reply_text(
-                    _["admin_10"].format(mention, CallbackQuery.message.chat.title)
-                )
-                try:
+# ... الكود السابق ...
+
+elif command == "Skip":
+    # تحقق من وجود قائمة الفحص في قاعدة البيانات لهذا الدردشة
+    check = db.get(chat_id)
+    if not check:
+        # إذا لم تكن القائمة موجودة، أرسل رسالة خطأ
+        return await CallbackQuery.answer(
+            _["admin_22"], show_alert=True
+        )
+    txt = f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🥺\n│ \n└ʙʏ : {mention} 🥀"
+    try:
+        # حاول إزالة العنصر الأول من القائمة
+        popped = check.pop(0)
+        if popped and AUTO_DOWNLOADS_CLEAR == str(True):
+            # إذا كانت الإعدادات تتطلب مسح التحميلات التلقائية، قم بذلك
+            await auto_clean(popped)
+        if not check:
+            # إذا كانت القائمة فارغة بعد الإزالة، أرسل رسالة تأكيد
+            await CallbackQuery.edit_message_text(
+                txt,
+                reply_markup=close_keyboard
+            )
+            await CallbackQuery.message.reply_text(
+                _["admin_10"].format(mention, CallbackQuery.message.chat.title)
+            )
+            # ... الكود اللاحق ...
+    except IndexError:
+        # إذا كانت القائمة فارغة ولا يمكن إزالة عنصر، أرسل رسالة خطأ
+        return await CallbackQuery.answer(
+            _["admin_22"], show_alert=True
+        )
+    # ... الكود اللاحق ...
+
                     return await Anon.stop_stream(chat_id)
                 except:
                     return
