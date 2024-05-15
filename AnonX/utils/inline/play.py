@@ -1,3 +1,8 @@
+# في أعلى ملف inline/play.py
+BOT_USERNAME = "new_bot_username"  # استبدل هذا باسم المستخدم الفعلي للبوت
+
+# ... باقي الكود ...
+
 import math
 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -60,16 +65,18 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
             ),
         ],
         [
-            InlineKeyboardButton(
-                text="⌯‹ 𝚜𝚘𝚞𝚛𝚌𝚎 𝚜𝚎𝚖𝚘 ›⁩⌯", url=f"https://t.me/FTTUTY"
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text="إضغط لاضافتي لمجموعتك ✅ ", url=f"https://t.me/ BOT_USERNAME = "your_bot_username" "
-            )
-        ],
+            buttons = [
+    [
+        InlineKeyboardButton(
+            text="⌯‹ 𝚜𝚘𝚞𝚛𝚌𝚎 𝚜𝚎𝚖𝚘 ›⁩⌯", url="https://t.me/fox56789"
+        )
+    ],
+    [
+        InlineKeyboardButton(
+            text="إضغط لاضافتي لمجموعتك ✅ ", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
+        )
     ]
+]
     return buttons
 
 
