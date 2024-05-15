@@ -46,6 +46,7 @@ except Exception as document:
     # هنا يمكنك التعامل مع الاستثناء أو طباعة رسالة الخطأ
     print(f"حدث خطأ: {document}")
 
+
         await message.reply(message, text=document)
     else:
         await message.reply(
