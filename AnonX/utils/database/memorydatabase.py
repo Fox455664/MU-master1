@@ -40,11 +40,15 @@ async def telegraph(client: Client, message: Message):
         message=message.reply_to_message,
         file_name="root/downloads/",
     )
+    async def upload_file(file_location):
+    async def upload_file(file_location):
     try:
-        def upload_file(file_location):
+        # الكود لتحميل الملف
     except Exception as document:
-        await message.reply(message, text=document)
+        await message.reply(text=document)
     else:
+        # الكود الذي يتم تنفيذه إذا لم يحدث استثناء
+
         await message.reply(
             f"<b>• الــرابـط:-</b>\n\n <code>https://telegra.ph{response[0]}</code>",
             quote=True,
