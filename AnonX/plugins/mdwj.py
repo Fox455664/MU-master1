@@ -41,8 +41,11 @@ async def telegraph(client: Client, message: Message):
         file_name="root/downloads/",
     )
     try:
-        def upload_file(file_location):
-    except Exception as document:
+    response = upload_file(download_location)
+except Exception as document:
+    # هنا يمكنك التعامل مع الاستثناء أو طباعة رسالة الخطأ
+    print(f"حدث خطأ: {document}")
+
         await message.reply(message, text=document)
     else:
         await message.reply(
