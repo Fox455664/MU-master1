@@ -13,7 +13,7 @@ heroku3
 lyricsgenius
 motor==3.0.0
 psutil==5.9.8
-pytgcalls==2.0.2
+py-tgcalls==2.0.2
 pyrogram==2.0.106
 python-dotenv
 pyyaml
