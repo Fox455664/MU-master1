@@ -11,7 +11,7 @@ heroku3
 lyricsgenius
 motor==3.0.0
 pillow
-psutilpy-tgcalls=2.0.2
+psutilpy-tgcalls==2.0.2
 pyrogram==2.0.106
 python-dotenv
 pyyaml
